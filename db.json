@@ -24,5 +24,6 @@
             "departureTime": "2026-06-11T14:20:00",
             "duration": "2h 15m"
         }
-    ]
+    ],
+    "bookings": []
 }
