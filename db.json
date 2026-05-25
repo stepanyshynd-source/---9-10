@@ -1,29 +1,44 @@
 {
-    "trains": [
-        {
-            "id": "1",
-            "number": "705K",
-            "departureCity": "Київ",
-            "arrivalCity": "Львів",
-            "departureTime": "2026-06-10T08:00:00",
-            "duration": "5h 30m"
-        },
-        {
-            "id": "2",
-            "number": "091K",
-            "departureCity": "Київ",
-            "arrivalCity": "Одеса",
-            "departureTime": "2026-06-10T21:15:00",
-            "duration": "9h 10m"
-        },
-        {
-            "id": "3",
-            "number": "043Л",
-            "departureCity": "Львів",
-            "arrivalCity": "Івано-Франківськ",
-            "departureTime": "2026-06-11T14:20:00",
-            "duration": "2h 15m"
-        }
-    ],
-    "bookings": []
+  "trains": [
+    {
+      "id": "1",
+      "number": "705K",
+      "departureCity": "Київ",
+      "arrivalCity": "Львів",
+      "departureTime": "2026-06-10T08:00:00",
+      "duration": "5h 30m"
+    },
+    {
+      "id": "2",
+      "number": "091K",
+      "departureCity": "Київ",
+      "arrivalCity": "Одеса",
+      "departureTime": "2026-06-10T21:15:00",
+      "duration": "9h 10m"
+    },
+    {
+      "id": "3",
+      "number": "043Л",
+      "departureCity": "Львів",
+      "arrivalCity": "Івано-Франківськ",
+      "departureTime": "2026-06-11T14:20:00",
+      "duration": "2h 15m"
+    }
+  ],
+  "bookings": [
+    {
+      "trainId": "1",
+      "wagon": 3,
+      "seats": [
+        3
+      ],
+      "userData": {
+        "name": "Данило",
+        "phone": "0681365276",
+        "email": "123@gmail.com"
+      },
+      "id": "SDw05CAvyQY"
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
 }
