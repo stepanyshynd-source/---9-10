@@ -105,3 +105,111 @@ h3 {
 .book-button:active {
     transform: translate(2px, 2px);
 }
+
+.wagon-selector {
+    margin-bottom: 20px;
+}
+
+.wagon-buttons {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+    flex-wrap: wrap;
+}
+
+.wagon-btn {
+    padding: 10px 15px;
+    border: 2px solid var(--border-color);
+    background: var(--card-bg);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: bold;
+    transition: all 0.1s;
+}
+
+.wagon-btn.active,
+.wagon-btn:hover {
+    background: var(--text-color);
+    color: #fff;
+    transform: translate(-2px, -2px);
+    box-shadow: 4px 4px 0px var(--border-color);
+}
+
+.booking-content {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+}
+
+@media (min-width: 768px) {
+    .booking-content {
+        grid-template-columns: 2fr 1fr;
+    }
+}
+
+.seats-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    margin-top: 15px;
+    max-width: 320px;
+}
+
+.seat {
+    padding: 15px 0;
+    border: 2px solid var(--border-color);
+    font-family: inherit;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.seat:not(:disabled):active {
+    transform: scale(0.9);
+}
+
+.seat-free {
+    background-color: var(--card-bg);
+    color: var(--text-color);
+}
+
+.seat-free:hover {
+    background-color: var(--seat-free);
+    color: white;
+}
+
+.seat-selected {
+    background-color: var(--seat-selected);
+    color: white;
+}
+
+.seat-booked {
+    background-color: var(--seat-booked);
+    color: white;
+    cursor: not-allowed;
+    opacity: 0.7;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    background: var(--card-bg);
+    padding: 20px;
+    border: 2px solid var(--border-color);
+    box-shadow: 6px 6px 0px var(--border-color);
+    height: fit-content;
+}
+
+.booking-form input {
+    padding: 12px;
+    border: 2px solid var(--border-color);
+    font-family: inherit;
+    outline: none;
+    transition: all 0.2s ease;
+}
+
+.booking-form input:focus {
+    transform: translate(2px, 2px);
+    box-shadow: 2px 2px 0px var(--border-color);
+}
