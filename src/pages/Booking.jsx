@@ -19,13 +19,21 @@ const Booking = () => {
             .then(data => setTrain(data));
     }, [trainId]);
 
-    useEffect(() => {
-        fetch(`http://localhost:3001/bookings?trainId=${trainId}&wagon=${selectedWagon}`)
+    const fetchBookedSeats = (tId, wagon) => {
+        return fetch(`http://localhost:3001/bookings`)
             .then(res => res.json())
             .then(data => {
-                const seats = data.flatMap(booking => booking.seats);
+                const filtered = data.filter(
+                    b => String(b.trainId) === String(tId) && Number(b.wagon) === Number(wagon)
+                );
+                const seats = filtered.flatMap(booking => booking.seats);
                 setBookedSeats(seats);
+                return seats;
             });
+    };
+
+    useEffect(() => {
+        fetchBookedSeats(trainId, selectedWagon);
     }, [trainId, selectedWagon]);
 
     const handleSeatSelect = (seat) => {
@@ -49,7 +57,9 @@ const Booking = () => {
             headers: { 'Content-Type': 'application/json' },
             body: JSON.stringify(newBooking)
         })
+            .then(() => fetchBookedSeats(trainId, selectedWagon))
             .then(() => {
+                setSelectedSeats([]);
                 alert('Бронювання успішне!');
                 navigate('/');
             });

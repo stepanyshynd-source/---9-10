@@ -187,7 +187,8 @@ h3 {
     background-color: var(--seat-booked);
     color: white;
     cursor: not-allowed;
-    opacity: 0.7;
+    opacity: 0.8;
+    pointer-events: none;
 }
 
 .booking-form {
